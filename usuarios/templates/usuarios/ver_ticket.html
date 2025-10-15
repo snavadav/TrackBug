@@ -1,0 +1,20 @@
+{% extends "usuarios/base.html" %}
+
+{% block title %}Detalle Ticket - TrackBug{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <h2>Detalle del Ticket</h2>
+</section>
+
+<section class="features" style="max-width: 600px; margin: 0 auto;">
+    <div class="feature">
+        <h3>{{ ticket.titulo }}</h3>
+        <p><strong>Descripción:</strong> {{ ticket.descripcion }}</p>
+        <p><strong>Estado:</strong> {{ ticket.estado }}</p>
+        <p><strong>Prioridad:</strong> {{ ticket.prioridad }}</p>
+        <p><strong>Fecha:</strong> {{ ticket.fecha_creacion }}</p>
+        <a href="{% url 'dashboard' %}" class="btn">Volver</a>
+    </div>
+</section>
+{% endblock %}

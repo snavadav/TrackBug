@@ -1,0 +1,23 @@
+<!-- base_admin.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Panel Admin{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/base_admin.css' %}">
+</head>
+<body>
+    <header>
+        <h1>TrackBug | Admin</h1>
+        <nav>
+            <a href="{% url 'admin_dashboard' %}">Dashboard</a>
+            <a href="{% url 'admin_tickets' %}">Tickets</a>
+            <a href="{% url 'logout' %}">Cerrar sesión</a>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>

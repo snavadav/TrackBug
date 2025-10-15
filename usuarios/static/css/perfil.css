@@ -1,0 +1,181 @@
+/* =======================
+   RESET Y BODY
+======================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+html, body {
+    height: 100%;
+    background: #0a0a0f;
+    color: #ffffff;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+/* =======================
+   HEADER
+======================= */
+header {
+    background: linear-gradient(90deg, #00ff88, #0099ff);
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 20px rgba(0,255,136,0.2);
+}
+
+header h1 {
+    font-size: 2rem;
+    background: linear-gradient(135deg, #00ff88, #0099ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+
+header nav a {
+    color: #ffffff;
+    margin-left: 20px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+header nav a:hover,
+header nav a.active {
+    color: #00ff88;
+    text-shadow: 0 0 10px rgba(0,255,136,0.5);
+}
+
+/* =======================
+   HERO / TARJETA
+======================= */
+.perfil-hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+    background: radial-gradient(circle at top left, rgba(0,255,136,0.1), transparent 70%), #151520;
+}
+
+.perfil-card {
+    background: #151520;
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+}
+
+.perfil-card h2 {
+    color: #00ff88;
+    margin-bottom: 30px;
+}
+
+/* =======================
+   FORMULARIO
+======================= */
+.perfil-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* Input wrapper */
+.input-wrapper {
+    position: relative;
+}
+
+/* Inputs flotantes */
+.perfil-form input {
+    width: 100%;
+    padding: 16px 16px 16px 12px;
+    background: #0a0a0f;
+    border: 1px solid #333;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 1rem;
+    outline: none;
+    transition: 0.3s;
+}
+
+.perfil-form input:focus {
+    border-color: #00ff88;
+    box-shadow: 0 0 10px rgba(0,255,136,0.5);
+}
+
+/* Labels flotantes */
+.perfil-form label {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+    color: #a0a0b0;
+    pointer-events: none;
+    background: #151520;
+    padding: 0 5px;
+    transition: 0.2s ease;
+}
+
+.perfil-form input:focus + label,
+.perfil-form input:not(:placeholder-shown) + label {
+    top: -10px;
+    left: 10px;
+    font-size: 0.85rem;
+    color: #00ff88;
+}
+
+/* Botón */
+.perfil-form button {
+    padding: 16px;
+    background: linear-gradient(135deg, #00ff88, #0099ff);
+    color: #0a0a0f;
+    font-weight: bold;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.perfil-form button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0,255,136,0.4);
+}
+
+/* =======================
+   FOOTER
+======================= */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #151520;
+    color: #a0a0b0;
+    border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+/* =======================
+   RESPONSIVE
+======================= */
+@media (max-width: 768px) {
+    .perfil-card {
+        padding: 30px 20px;
+    }
+
+    header {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

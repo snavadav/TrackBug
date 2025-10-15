@@ -1,0 +1,76 @@
+/* Contenedor centrado */
+.ticket-detail-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 20px;
+    width: 100%;
+    min-height: 80vh;
+}
+
+/* Tarjeta del ticket */
+.ticket-detail-card {
+    background: #151520;
+    padding: 40px 30px;
+    border-radius: 16px;
+    max-width: 700px;
+    width: 100%;
+    box-shadow: 0 20px 40px rgba(0,255,136,0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transition: all 0.3s ease;
+}
+
+.ticket-detail-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 30px 60px rgba(0,255,136,0.3);
+}
+
+/* Título */
+.ticket-detail-card h2 {
+    color: #00ff88;
+    font-size: 2rem;
+}
+
+/* Meta info */
+.ticket-meta {
+    color: #a0a0b0;
+    font-size: 14px;
+}
+
+/* Descripción */
+.ticket-description {
+    color: #ffffff;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    white-space: pre-line; /* respeta saltos de línea */
+}
+
+/* Botones */
+.ticket-actions .btn {
+    background: linear-gradient(135deg, #00ff88, #0099ff);
+    color: #0a0a0f;
+    padding: 12px 25px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    width: max-content;
+    transition: all 0.3s ease;
+}
+
+.ticket-actions .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0,255,136,0.4);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .ticket-detail-card {
+        padding: 30px 20px;
+    }
+    
+    .ticket-detail-card h2 {
+        font-size: 1.75rem;
+    }
+}

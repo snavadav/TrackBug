@@ -1,0 +1,26 @@
+{% extends "usuarios/base.html" %}
+
+{% block title %}Inicio - TrackBug{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <h2>Bienvenido a TrackBug</h2>
+    <p>Gestiona y reporta errores de manera eficiente.</p>
+    <a href="{% url 'login' %}" class="btn">Iniciar Sesión</a>
+</section>
+
+<section class="features">
+    <div class="feature">
+        <h3>Rápido</h3>
+        <p>Registra y visualiza tickets al instante.</p>
+    </div>
+    <div class="feature">
+        <h3>Seguro</h3>
+        <p>Protege la información de tu equipo y clientes.</p>
+    </div>
+    <div class="feature">
+        <h3>Organizado</h3>
+        <p>Mantén todos tus tickets clasificados y accesibles.</p>
+    </div>
+</section>
+{% endblock %}

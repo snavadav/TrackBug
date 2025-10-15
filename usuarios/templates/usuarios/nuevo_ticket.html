@@ -1,0 +1,27 @@
+{% extends "usuarios/base.html" %}
+{% load static %}
+
+{% block title %}Nuevo Ticket - TrackBug{% endblock %}
+
+{% block content %}
+<div class="form-section">
+    <h1>Crear Nuevo Ticket</h1>
+
+    <form method="POST" class="ticket-form">
+        {% csrf_token %}
+        
+        <!-- En lugar de as_p, los renderizamos manualmente -->
+        {% for field in form %}
+        <div class="input-wrapper">
+            {{ field }}
+            <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+            {% if field.errors %}
+                <small class="error-msg">{{ field.errors|striptags }}</small>
+            {% endif %}
+        </div>
+        {% endfor %}
+        
+        <button type="submit" class="btn">Crear Ticket</button>
+    </form>
+</div>
+{% endblock %}

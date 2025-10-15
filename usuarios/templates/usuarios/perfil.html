@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Perfil de Usuario</title>
+    <link rel="stylesheet" href="{% static 'css/perfil.css' %}">
+</head>
+<body>
+    <header>
+        <h1>TrackBug</h1>
+        <nav>
+            <a href="{% url 'dashboard' %}">Inicio</a>
+            <a href="{% url 'nuevo_ticket' %}">Nuevo Ticket</a>
+            <a href="{% url 'perfil' %}" class="active">Perfil</a>
+            <a href="{% url 'logout' %}">Cerrar sesión</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="perfil-hero">
+            <div class="perfil-card">
+                <h2>Perfil de {{ user.username }}</h2>
+                <form method="POST" class="perfil-form">
+                    {% csrf_token %}
+                    {% for field in form %}
+                    <div class="input-wrapper">
+                        {{ field }}
+                        <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                        {% if field.errors %}
+                        <div class="errorlist">{{ field.errors }}</div>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                    <button type="submit">Actualizar Perfil</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 TrackBug. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,28 @@
+{% extends "usuarios/base.html" %}
+
+{% block title %}Dashboard - TrackBug{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <h2>Hola, {{ user.username }} </h2>
+    <p>Aquí puedes ver y gestionar tus tickets.</p>
+    <a href="{% url 'nuevo_ticket' %}" class="btn">Nuevo Ticket</a>
+</section>
+
+<section class="features">
+    {% if tickets %}
+        {% for ticket in tickets %}
+            <div class="ticket-card feature">
+                <h3>{{ ticket.titulo }}</h3>
+                <p>{{ ticket.descripcion|truncatewords:15 }}</p>
+                <a href="{% url 'ver_ticket' ticket.id %}" class="btn">Ver Ticket</a>
+            </div>
+        {% empty %}
+            <p>No tienes tickets aún.</p>
+        {% endfor %}
+    {% else %}
+        <p style="text-align:center; color:#a0a0b0;">No tienes tickets registrados.</p>
+    {% endif %}
+</section>
+
+{% endblock %}
